@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<style>
+    .inputDisplay{
+        width: 124px;
+        padding: 8px;
+    }
+
+    .btn{
+        width: 32px;
+        height: 32px;
+    }
+</style>
+<body>
+    <input type="Number" id="inputCampo" value="0" class="inputDisplay" disabled="true">
+    <table>
+        <tr>
+            <td>
+                <button class="btn" onclick="atualizarCampo('7')">7</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('8')">8</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('9')">9</button>
+            </td>
+            <td>
+                <button class="btn" onclick="limpar()">CE</button>
+            </td>
+        </tr>
+
+         <tr>
+            <td>
+                <button class="btn" onclick="atualizarCampo('4')">4</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('5')">5</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('6')">6</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarOperacao('+')">+</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button class="btn" onclick="atualizarCampo('1')">1</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('2')">2</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('3')">3</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarOperacao('-')">-</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button class="btn" onclick="resolver()">=</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarCampo('0')">0</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarOperacao('*')">*</button>
+            </td>
+            <td>
+                <button class="btn" onclick="atualizarOperacao('/')">/</button>
+            </td>
+        </tr>
+    </table>
+
+    <script src="calculadora.js"></script>
+</body>
+</html>
