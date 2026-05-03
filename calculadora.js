@@ -1,18 +1,35 @@
+function atualizarCampo(numero){
+    if(campo.value === '0'){
+        campo.value = numero;
+    } else{
+        campo.value = campo.value + numero;
+    }
+}
+
 const campo = document.getElementById('inputCampo');
-let operacao = '';
+let operador = '';
 let numero1 = 0;
 
 function atualizarOperacao(op) {
-    operacao = op;
-    numero1 = parseInt(campo.value);
+    operador = op;
+    numero1 = parseFloat(campo.value);
     campo.value = '0';
 }
 
-function resolver(){
-    let numero2 = parseInt(campo.value);
+function apagarNumero(params) {
+    const valoratual = campo.value;
+    if (valoratual.length > 1) {
+        campo.value = valoratual.slice(0, -1);
+    } else {
+        campo.value = '0';
+    }
+}
+
+function resolver() {
+    let numero2 = parseFloat(campo.value);
     let resultado = 0;
 
-    switch(operacao){
+    switch (operador) {
         case '+':
             resultado = numero1 + numero2;
             break;
@@ -21,26 +38,20 @@ function resolver(){
             break;
         case '*':
             resultado = numero1 * numero2;
-            break; 
+            break;
         case '/':
-            resultado = numero1 / numero2;
+            if (numero2 !== 0) {
+                resultado = numero1 / numero2;
+            } 
             break;
     }
 
-    campo.value = resultado;
+    campo.value = resultado.toString();
 }
 
-function limpar() {
+function limpar(params) {
     campo.value = '0';
-    operacao = '';
+    operador = '';
     numero1 = 0;
-}
-
-function atualizarCampo(numero){
-
-    if(campo.value === '0'){
-        campo.value = numero;
-    } else{
-        campo.value = campo.value + numero;
-    }
+    numero2 = 0;
 }
